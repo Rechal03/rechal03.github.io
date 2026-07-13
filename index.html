@@ -256,11 +256,22 @@
   /* ---------- ABOUT ---------- */
   .about-grid{
     display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 56px;
+    grid-template-columns: auto 1.1fr 1fr;
+    gap: 40px;
     align-items: start;
   }
-  @media (max-width: 780px){ .about-grid{ grid-template-columns: 1fr; } }
+  @media (max-width: 900px){
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-photo{ max-width: 220px; margin: 0 auto; }
+  }
+  .about-photo img{
+    width: 100%;
+    max-width: 220px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    display: block;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+  }
   .about-text p{ color: var(--text-muted); margin-bottom: 16px; font-size: 1rem; }
   .about-text strong{ color: var(--text); font-weight: 500; }
 
@@ -489,6 +500,9 @@
         <h2>About</h2>
       </div>
       <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="images/profile-photo.jpg" alt="Rechal Reddy Chamakura">
+        </div>
         <div class="about-text reveal">
           <p>I'm a <strong>Full-Stack Engineer</strong> and <strong>AI systems developer</strong> currently completing my M.S. in Computer Science at Texas Tech University. My work spans two connected worlds: building reliable backend systems and APIs, and building the retrieval and reasoning layers that make LLMs actually useful in production.</p>
           <p>Recently I re-architected a production <strong>RAG pipeline</strong> — chunking, embedding, and re-ranking — to improve retrieval precision while cutting response latency under real query load. I also built <strong>ResearchGPT</strong> from scratch: a document-grounded question-answering system running entirely on local, open-source models.</p>
@@ -588,6 +602,19 @@
         <div class="stack-row">
           <span class="stack-chip">FastAPI</span><span class="stack-chip">LangChain</span><span class="stack-chip">FAISS</span>
           <span class="stack-chip">Hugging Face</span><span class="stack-chip">Llama 3 / Ollama</span><span class="stack-chip">Streamlit</span><span class="stack-chip">Docker</span>
+        </div>
+      </div>
+
+      <div class="project-featured reveal">
+        <span class="proj-tag mono">Featured — AI Developer Tool</span>
+        <h3>CodePilot AI — Codebase Understanding Assistant</h3>
+        <p>An AI-powered coding assistant that ingests an entire codebase, indexes it with semantic embeddings, and answers natural-language questions about the project — grounded in the actual source code, with cited file sources. Also performs automated code review and generates project documentation, all served through a custom RAG pipeline running on a local LLM.</p>
+        <div class="proj-links">
+          <a href="https://github.com/Rechal03/codepilot-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="stack-row">
+          <span class="stack-chip">FastAPI</span><span class="stack-chip">Sentence Transformers</span><span class="stack-chip">FAISS</span>
+          <span class="stack-chip">Llama 3 / Ollama</span><span class="stack-chip">RAG</span><span class="stack-chip">JavaScript</span>
         </div>
       </div>
 
