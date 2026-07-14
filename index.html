@@ -502,9 +502,9 @@
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow mono">Available for full-stack &amp; AI engineering roles</div>
-    <h1 class="title">Rechal Reddy Chamakura — building systems that <span class="grad">retrieve, reason, and ship.</span></h1>
-    <p class="hero-sub">Full-Stack Engineer and AI-driven systems developer. I build end-to-end applications, RAG pipelines, multi-agent AI systems, and production-ready platforms — from vector search to the API that serves it.</p>
+    <div class="eyebrow mono">AI/ML Engineer · M.S. Computer Science, 2026 · Open to full-time roles</div>
+    <h1 class="title">Rechal Reddy Chamakura — building AI systems that <span class="grad">retrieve, reason, and ship.</span></h1>
+    <p class="hero-sub">AI/ML Engineer specializing in Retrieval-Augmented Generation, multi-agent orchestration, and production LLM applications. I build the full stack underneath an AI product — vector search, agent pipelines, and the APIs that serve them — with a focus on grounded, non-hallucinated answers.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#projects">View Projects</a>
       <a class="btn btn-ghost" href="mailto:rechalreddyc@gmail.com">Get in touch</a>
@@ -546,23 +546,24 @@
           <img src="profile-photo.jpg" alt="Rechal Reddy Chamakura">
         </div>
         <div class="about-text reveal">
-          <p>I'm a <strong>Full-Stack Engineer</strong> and <strong>AI systems developer</strong> with an M.S. in Computer Science from Texas Tech University (2026). My work spans two connected worlds: building reliable backend systems and APIs, and building the retrieval, reasoning, and agent orchestration layers that make LLMs actually useful in production.</p>
-          <p>Recently I re-architected a production <strong>RAG pipeline</strong> — chunking, embedding, and re-ranking — to improve retrieval precision while cutting response latency under real query load. I've also built <strong>ResearchGPT</strong>, a document-grounded question-answering system, and <strong>Job Agent AI</strong>, a multi-agent LangGraph system that automates job application analysis — both running entirely on local, open-source models.</p>
+          <p>I'm an <strong>AI/ML Engineer</strong> with an M.S. in Computer Science from Texas Tech University (2026). My work sits at the intersection of two things: building reliable backend systems and APIs, and building the retrieval, reasoning, and agent orchestration layers that make LLMs actually useful in production.</p>
+          <p>As a Graduate Assistant, I built a <strong>RAG pipeline</strong> for an AI tutoring system — chunking, embedding with Sentence Transformers, and retrieval over ChromaDB, served by a locally-hosted Mistral 7B model with production-grade security middleware. I've also built <strong>ResearchGPT</strong>, a document-grounded question-answering system, <strong>CodePilot AI</strong>, a codebase-aware coding assistant, and <strong>Job Agent AI</strong>, a four-agent LangGraph system that automates job application analysis — all running entirely on local, open-source models.</p>
           <p>I like problems where the correctness of an answer matters — where "the model made something up" isn't an acceptable failure mode.</p>
         </div>
         <div class="skills reveal">
           <div class="skills-block">
-            <h3>Generative AI</h3>
+            <h3>AI / LLM Engineering</h3>
             <div class="chip-row">
-              <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">FAISS</span>
-              <span class="chip">Hugging Face</span><span class="chip">Llama 3 / Ollama</span><span class="chip">Multi-Agent Systems</span><span class="chip">Prompt Engineering</span>
+              <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">Multi-Agent Systems</span>
+              <span class="chip">FAISS</span><span class="chip">ChromaDB</span><span class="chip">Sentence Transformers</span><span class="chip">Hugging Face</span>
+              <span class="chip">Llama 3 / Mistral / Ollama</span><span class="chip">Prompt Engineering</span><span class="chip">Pydantic</span>
             </div>
           </div>
           <div class="skills-block">
             <h3>Backend &amp; Full-Stack</h3>
             <div class="chip-row">
               <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">Node.js</span>
-              <span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">REST APIs</span>
+              <span class="chip">React</span><span class="chip">PostgreSQL</span><span class="chip">REST APIs</span><span class="chip">Streamlit</span>
             </div>
           </div>
           <div class="skills-block">
@@ -644,10 +645,12 @@
           </div>
           <div class="tl-org">Texas Tech University, Lubbock, TX</div>
           <ul class="tl-list">
-            <li>Built the RAG retrieval pipeline for an AI tutoring system — document chunking, embedding generation, and vector search — to ground tutor responses in course material.</li>
-            <li>Developed the backend APIs connecting the conversational tutor, quiz generator, and retrieval layer into a single working system.</li>
-            <li>Implemented the multi-turn tutoring conversation flow, handling follow-up questions and maintaining context across a session.</li>
-            <li>Built the quiz generation logic that produces questions directly from ingested course content.</li>
+            <li>Built a Retrieval-Augmented Generation pipeline for an AI tutoring and quiz system — document chunking, Sentence Transformer embeddings, and semantic search over a ChromaDB vector store — to ground responses in course material.</li>
+            <li>Served answer generation and quiz-question generation through a locally-hosted Mistral 7B model via Ollama, keeping the system fully private with no external API dependency.</li>
+            <li>Developed the FastAPI backend connecting the conversational Q&amp;A mode, quiz generator, and retrieval layer into a single working system, with citation mapping back to source documents.</li>
+            <li>Implemented an LLM-based grading pipeline for open-ended quiz answers, scoring responses on accuracy and depth and returning a letter grade with confidence percentage.</li>
+            <li>Built a security middleware layer covering rate limiting, PII detection/sanitization, SQL injection and XSS protection, and input validation to make the system safe for real user traffic.</li>
+            <li>Added HTTP-level request/response tracing for full observability of the RAG pipeline during debugging and demos.</li>
           </ul>
         </div>
 
@@ -685,6 +688,19 @@
       <div class="section-head reveal">
         <span class="section-num mono">04</span>
         <h2>Selected Projects</h2>
+      </div>
+
+      <div class="project-featured reveal">
+        <span class="proj-tag mono">Featured — Agentic RAG System</span>
+        <h3>Networking RAG Tutor &amp; Quiz Bot</h3>
+        <p>A dual-mode Retrieval-Augmented Generation system for networking and security education — a Q&amp;A mode that answers questions with cited, context-grounded responses, and a Quiz mode that generates and grades multiple-choice, true/false, and open-ended questions from course material. Semantic search runs over ChromaDB using Sentence Transformer embeddings, with a locally-hosted Mistral 7B model handling generation and grading. Hardened with production-style security middleware — rate limiting, PII sanitization, SQL injection/XSS protection — and full HTTP-level request tracing for pipeline observability.</p>
+        <div class="proj-links">
+          <a href="https://github.com/NetworkSecurityProjectTutorQuizAgent/Agent-Based-Intelligent-Tutor-and-Quiz-Bot" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="stack-row">
+          <span class="stack-chip">FastAPI</span><span class="stack-chip">ChromaDB</span><span class="stack-chip">Sentence Transformers</span>
+          <span class="stack-chip">Mistral 7B / Ollama</span><span class="stack-chip">RAG</span><span class="stack-chip">Security Middleware</span>
+        </div>
       </div>
 
       <div class="project-featured reveal">
@@ -765,7 +781,7 @@
 <footer id="contact">
   <div class="wrap footer-inner">
     <h2>Let's build something that <span style="background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;">actually works.</span></h2>
-    <p class="sub">Open to full-stack and AI/ML engineering roles.</p>
+    <p class="sub">Open to AI/ML and full-stack engineering roles.</p>
     <div class="contact-links">
       <a class="btn btn-primary" href="mailto:rechalreddyc@gmail.com">rechalreddyc@gmail.com</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/rechal-reddy-chamakura-168a9427a/" target="_blank" rel="noopener">LinkedIn ↗</a>
