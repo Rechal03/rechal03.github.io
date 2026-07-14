@@ -298,6 +298,47 @@
   }
   .chip:hover{ border-color: var(--accent-2); color: var(--text); }
 
+  /* ---------- CERTIFICATIONS ---------- */
+  .cert-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 700px){ .cert-grid{ grid-template-columns: 1fr; } }
+  .cert-card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+  .cert-card:hover{ border-color: var(--accent-1); transform: translateY(-2px); }
+  .cert-icon{
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: rgba(124,111,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-2);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .cert-name{ font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+  .cert-issuer{ color: var(--text-muted); font-size: 0.82rem; }
+  .cert-id{
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    margin-top: 4px;
+  }
+
   /* ---------- EXPERIENCE ---------- */
   .timeline{ position: relative; padding-left: 28px; }
   .timeline::before{
@@ -451,6 +492,7 @@
     <a href="#top" class="nav-brand">RRC<span class="dot">.</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -462,7 +504,7 @@
   <div class="wrap">
     <div class="eyebrow mono">Available for full-stack &amp; AI engineering roles</div>
     <h1 class="title">Rechal Reddy Chamakura — building systems that <span class="grad">retrieve, reason, and ship.</span></h1>
-    <p class="hero-sub">Full-Stack Engineer and AI-driven systems developer. I build end-to-end applications, RAG pipelines, and production-ready platforms — from vector search to the API that serves it.</p>
+    <p class="hero-sub">Full-Stack Engineer and AI-driven systems developer. I build end-to-end applications, RAG pipelines, multi-agent AI systems, and production-ready platforms — from vector search to the API that serves it.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#projects">View Projects</a>
       <a class="btn btn-ghost" href="mailto:rechalreddyc@gmail.com">Get in touch</a>
@@ -504,16 +546,16 @@
           <img src="profile-photo.jpg" alt="Rechal Reddy Chamakura">
         </div>
         <div class="about-text reveal">
-          <p>I'm a <strong>Full-Stack Engineer</strong> and <strong>AI systems developer</strong> currently completing my M.S. in Computer Science at Texas Tech University. My work spans two connected worlds: building reliable backend systems and APIs, and building the retrieval and reasoning layers that make LLMs actually useful in production.</p>
-          <p>Recently I re-architected a production <strong>RAG pipeline</strong> — chunking, embedding, and re-ranking — to improve retrieval precision while cutting response latency under real query load. I also built <strong>ResearchGPT</strong> from scratch: a document-grounded question-answering system running entirely on local, open-source models.</p>
+          <p>I'm a <strong>Full-Stack Engineer</strong> and <strong>AI systems developer</strong> with an M.S. in Computer Science from Texas Tech University (2026). My work spans two connected worlds: building reliable backend systems and APIs, and building the retrieval, reasoning, and agent orchestration layers that make LLMs actually useful in production.</p>
+          <p>Recently I re-architected a production <strong>RAG pipeline</strong> — chunking, embedding, and re-ranking — to improve retrieval precision while cutting response latency under real query load. I've also built <strong>ResearchGPT</strong>, a document-grounded question-answering system, and <strong>Job Agent AI</strong>, a multi-agent LangGraph system that automates job application analysis — both running entirely on local, open-source models.</p>
           <p>I like problems where the correctness of an answer matters — where "the model made something up" isn't an acceptable failure mode.</p>
         </div>
         <div class="skills reveal">
           <div class="skills-block">
             <h3>Generative AI</h3>
             <div class="chip-row">
-              <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">FAISS</span>
-              <span class="chip">Hugging Face</span><span class="chip">Llama 3 / Ollama</span><span class="chip">Prompt Engineering</span>
+              <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">FAISS</span>
+              <span class="chip">Hugging Face</span><span class="chip">Llama 3 / Ollama</span><span class="chip">Multi-Agent Systems</span><span class="chip">Prompt Engineering</span>
             </div>
           </div>
           <div class="skills-block">
@@ -534,10 +576,63 @@
     </div>
   </section>
 
-  <section id="experience">
+  <section id="certifications">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="section-num mono">02</span>
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">AWS</div>
+          <div>
+            <div class="cert-name">AWS Cloud Technology Consultant</div>
+            <div class="cert-issuer">Coursera</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">CN</div>
+          <div>
+            <div class="cert-name">Networking Essentials</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">SEC</div>
+          <div>
+            <div class="cert-name">Introduction to Cybersecurity</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">SEC</div>
+          <div>
+            <div class="cert-name">Cybersecurity Essentials</div>
+            <div class="cert-issuer">Cisco Networking Academy</div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">PM</div>
+          <div>
+            <div class="cert-name">Software Project Management</div>
+            <div class="cert-issuer">NPTEL</div>
+            <div class="cert-id">Credential ID: NPTEL22CS107S54342252</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num mono">03</span>
         <h2>Experience</h2>
       </div>
       <div class="timeline">
@@ -588,7 +683,7 @@
   <section id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="section-num mono">03</span>
+        <span class="section-num mono">04</span>
         <h2>Selected Projects</h2>
       </div>
 
@@ -615,6 +710,19 @@
         <div class="stack-row">
           <span class="stack-chip">FastAPI</span><span class="stack-chip">Sentence Transformers</span><span class="stack-chip">FAISS</span>
           <span class="stack-chip">Llama 3 / Ollama</span><span class="stack-chip">RAG</span><span class="stack-chip">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project-featured reveal">
+        <span class="proj-tag mono">Featured — Agentic AI System</span>
+        <h3>Job Agent AI — Multi-Agent Career Assistant</h3>
+        <p>A multi-agent AI system that analyzes a resume against a job description and produces a complete application-readiness report. Built as four sequential LangGraph agents — resume parsing, skill gap analysis, resume tailoring, and interview preparation — each passing structured state to the next, rather than a single prompt-response chatbot.</p>
+        <div class="proj-links">
+          <a href="https://github.com/Rechal03/job-agent-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+        <div class="stack-row">
+          <span class="stack-chip">LangGraph</span><span class="stack-chip">LangChain</span><span class="stack-chip">FastAPI</span>
+          <span class="stack-chip">Llama 3 / Ollama</span><span class="stack-chip">Pydantic</span><span class="stack-chip">Multi-Agent Orchestration</span>
         </div>
       </div>
 
